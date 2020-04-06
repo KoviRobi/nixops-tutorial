@@ -178,3 +178,8 @@ Don't forget to destroy the created machines with:
     ./mynix nixops destroy -d example-nginx-deployment
 
 You can pass the `--confirm` option if you don't want it to ask interactive questions.
+
+## Tutorial 2: A Jitsi instance
+I have modified the simple example to deploy a jitsi server. To configure,
+change the values that are currently set to `CHANGEME`. Start the machine, set
+your DNS to point to the machine, then enable the ACME to get the certificate.
