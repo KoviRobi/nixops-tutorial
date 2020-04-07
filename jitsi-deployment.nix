@@ -125,13 +125,11 @@ in
   in
   { resources, nodes, lib, pkgs, ... }: {
 
-    boot.loader.grub.device = lib.mkForce "/dev/nvme0n1";
-
     # Cloud provider settings; here for AWS
     deployment.targetEnv = "ec2";
     deployment.ec2.accessKeyId = awsKeyId; # symbolic name looked up in ~/.ec2-keys or a ~/.aws/credentials profile name
     deployment.ec2.region = region;
-    deployment.ec2.instanceType = "t3.medium";
+    deployment.ec2.instanceType = "t2.micro"; # AWS Free Tier
     deployment.ec2.ebsInitialRootDiskSize = 20; # GB
     deployment.ec2.keyPair = resources.ec2KeyPairs.my-key-pair;
     deployment.ec2.associatePublicIpAddress = true;
