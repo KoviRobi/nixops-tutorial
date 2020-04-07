@@ -125,6 +125,8 @@ in
   in
   { resources, nodes, lib, pkgs, ... }: {
 
+    boot.loader.grub.device = lib.mkForce "/dev/sda1";
+
     # Cloud provider settings; here for AWS
     deployment.targetEnv = "ec2";
     deployment.ec2.accessKeyId = awsKeyId; # symbolic name looked up in ~/.ec2-keys or a ~/.aws/credentials profile name
